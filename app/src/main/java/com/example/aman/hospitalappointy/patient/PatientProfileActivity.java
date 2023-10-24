@@ -3,10 +3,14 @@ package com.example.aman.hospitalappointy.patient;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 
 import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.doctor.EditDoctorProfileActivity;
@@ -31,7 +35,7 @@ public class PatientProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.patient_profile_activity);
+        setContentView(R.layout.activity_patient_profile);
 
         mName = (TextView) findViewById(R.id.doctor_name);
         mSpecialization = (TextView) findViewById(R.id.doctor_specialization);
@@ -62,7 +66,7 @@ public class PatientProfileActivity extends AppCompatActivity {
         mEditProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(com.example.aman.hospitalappointy.doctor.DoctorProfileActivity.this, EditDoctorProfileActivity.class);
+                Intent intent = new Intent(PatientProfileActivity.this, EditDoctorProfileActivity.class);
                 intent.putExtra("Name", name);
                 intent.putExtra("Specialization", specialization);
                 intent.putExtra("Experiance", experiance);
@@ -79,7 +83,7 @@ public class PatientProfileActivity extends AppCompatActivity {
 
     private void alertDialogBox() {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(com.example.aman.hospitalappointy.doctor.DoctorProfileActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(PatientProfileActivity.this);
 
         View view = getLayoutInflater().inflate(R.layout.roster_dialog, null);
 
