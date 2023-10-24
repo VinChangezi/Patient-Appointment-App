@@ -168,6 +168,7 @@ public class BookAppointmentActivity extends AppCompatActivity implements View.O
 
         selectDate = (TextView) findViewById(R.id.bookAppointment_selectDate);
 
+//        date = getIntent().getStringExtra("Date").toString();
         date = getIntent().getStringExtra("Date").toString();
         selectDate.setText(date);
         selectDate.setOnClickListener(new View.OnClickListener() {

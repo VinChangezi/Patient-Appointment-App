@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.aman.hospitalappointy.home.DashboardActivity;
+import com.example.aman.hospitalappointy.home.DashboardScreenActivity;
 import com.example.aman.hospitalappointy.home.HomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -30,7 +32,8 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                HomeActivity.launch(SplashActivity.this);
+//                HomeActivity.launch(SplashActivity.this);
+                DashboardScreenActivity.launch(SplashActivity.this);
                 finish();
             }
         }, 3000);

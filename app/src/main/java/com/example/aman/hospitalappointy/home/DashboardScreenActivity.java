@@ -1,5 +1,14 @@
 package com.example.aman.hospitalappointy.home;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,14 +17,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.viewpager.widget.ViewPager;
-
 import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.SplashActivity;
 import com.example.aman.hospitalappointy.about.AboutActivity;
@@ -23,6 +24,7 @@ import com.example.aman.hospitalappointy.auth.LoginActivity;
 import com.example.aman.hospitalappointy.doctor.DoctorProfileActivity;
 import com.example.aman.hospitalappointy.doctor.ShowDoctorAppointmentActivity;
 import com.example.aman.hospitalappointy.feedback.FeedbackActivity;
+import com.example.aman.hospitalappointy.patient.BookAppointmentActivity;
 import com.example.aman.hospitalappointy.patient.PatientProfileActivity;
 import com.example.aman.hospitalappointy.patient.PatientViewBookedAppointmentActivity;
 import com.example.aman.hospitalappointy.utils.KeyboardUtils;
@@ -36,8 +38,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DashboardScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
@@ -50,13 +51,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private ViewPager mViewPager;
     private SectionPagerAdapter mSectionPagerAdapter;
 
+    private CardView profileCard, doctorCard, appointmentCard, testCard, medicinesCard, qrCard;
+
     //Firebase Auth
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference();
 
 
     public static void launch(SplashActivity context) {
-        Intent intent = new Intent(context, HomeActivity.class);
+        Intent intent = new Intent(context, DashboardScreenActivity.class);
         context.startActivity(intent);
     }
 
@@ -64,7 +67,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dashboard_screen);
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
@@ -73,10 +76,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         //DrawerLayout and ToggleButton
         mDrawerLayout = findViewById(R.id.main_drawerLayout);
-        mToggle = new ActionBarDrawerToggle(HomeActivity.this, mDrawerLayout, R.string.open, R.string.close);
+        mToggle = new ActionBarDrawerToggle(DashboardScreenActivity.this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //CardViews
+        profileCard = findViewById(R.id.card1);
+        doctorCard = findViewById(R.id.card2);
+        appointmentCard = findViewById(R.id.card3);
+        testCard = findViewById(R.id.card4);
+        medicinesCard = findViewById(R.id.card5);
+        qrCard = findViewById(R.id.card6);
+
+        setListeners();
 
         //NavigationView
         mNavigationView = findViewById(R.id.main_nav_view);
@@ -107,6 +120,47 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         mTabLayout = findViewById(R.id.main_tabLayout);
         mTabLayout.setupWithViewPager(mViewPager);
 
+    }
+
+    private void setListeners() {
+        profileCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(PatientProfileActivity.class);
+            }
+        });
+
+        doctorCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(HomeActivity.class);
+            }
+        });
+
+        appointmentCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(PatientViewBookedAppointmentActivity.class);
+            }
+        });
+        testCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(TestActivity.class);
+            }
+        });
+        medicinesCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(MedicineActivity.class);
+            }
+        });
+        qrCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchScreen(QRCodeActivity.class);
+            }
+        });
     }
 
 
@@ -192,7 +246,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             userName.setText(name);
                             userEmail.setText(email);
 
-                            Toast.makeText(HomeActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -221,7 +275,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             userName.setText(name);
                             userEmail.setText(email);
 
-                            Toast.makeText(HomeActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -231,7 +285,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         }
                     });
                 } else {
-                    Toast.makeText(HomeActivity.this, "You are not authorized for this facility or Account Under Pending", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DashboardScreenActivity.this, "You are not authorized for this facility or Account Under Pending", Toast.LENGTH_SHORT).show();
                     FirebaseAuth.getInstance().signOut();
                     onStart();
                 }
@@ -239,7 +293,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(HomeActivity.this, databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DashboardScreenActivity.this, databaseError.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -283,11 +337,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_feedback:
-                startActivity(new Intent(HomeActivity.this, FeedbackActivity.class));
+                startActivity(new Intent(DashboardScreenActivity.this, FeedbackActivity.class));
                 break;
 
             case R.id.nav_aboutapp:
-                startActivity(new Intent(HomeActivity.this, AboutActivity.class));
+                startActivity(new Intent(DashboardScreenActivity.this, AboutActivity.class));
                 break;
             default:
                 break;
@@ -298,11 +352,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void launchScreen(Class<?> activity) {
         hideKeyboard();
-        Intent intent = new Intent(HomeActivity.this, activity);
+        Intent intent = new Intent(DashboardScreenActivity.this, activity);
         startActivity(intent);
     }
 
     private void hideKeyboard() {
-        KeyboardUtils.hideKeyboard(HomeActivity.this);
+        KeyboardUtils.hideKeyboard(DashboardScreenActivity.this);
     }
 }

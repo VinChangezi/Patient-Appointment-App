@@ -14,13 +14,31 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".home.ConsultancyDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.QRCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.MedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.DashboardScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".patient.MainActivityasd"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
-            android:exported="true">
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,6 +76,11 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".doctor.DoctorProfileActivity"
+            android:parentActivityName=".home.HomeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".patient.PatientProfileActivity"
             android:parentActivityName=".home.HomeActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

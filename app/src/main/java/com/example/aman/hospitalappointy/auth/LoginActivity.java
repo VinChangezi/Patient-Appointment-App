@@ -7,10 +7,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.home.HomeActivity;
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.login_toolbar);
-//        setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("LOG IN");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

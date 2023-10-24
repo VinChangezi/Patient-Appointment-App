@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Appointment Detail"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="The initial visit to the doctor is often referred to as a medical appointment. During this appointment, the patient discusses their symptoms or concerns with the doctor, and the doctor conducts an examination and asks questions to determine the nature of the medical issue"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Medical Evaluation"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text=" The doctor performs a medical evaluation or assessment to diagnose the patient's condition. This may include physical examinations, medical history review, and discussions with the patient."/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Diagnosis"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text=": After the evaluation, the doctor reaches a diagnosis. They identify the underlying medical condition or disease that is causing the patient's symptoms"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Prescription"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="If the doctor determines that medication is necessary for treatment, they will prescribe specific medications. The doctor provides details such as the name of the medication, dosage, and instructions on how to take it."/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Medical Tests"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="In some cases, the doctor may order medical tests to gather additional information about the patient's condition. These tests could include blood tests, imaging studies (e.g., X-rays, MRIs), biopsies, or other diagnostic procedures."/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Treatment Plan:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="The doctor outlines a treatment plan, which may include medications, lifestyle changes, therapy, surgery, or other interventions, depending on the patient's condition."/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Follow-up:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="The patient is typically advised to follow up with the doctor after a specific period of time to assess the progress of the treatment or to discuss the results of the tests."/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Prescription and Test Orders"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:text="The doctor's orders for medications and tests are typically documented in the patient's medical record. Prescriptions can be filled at a pharmacy, and the patient may be directed to a laboratory or diagnostic facility for the tests."/>
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
