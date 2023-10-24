@@ -115,6 +115,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Menu menuNav = mNavigationView.getMenu();
         final MenuItem nav_profile = menuNav.findItem(R.id.nav_profile);
+        final MenuItem nav_patientProfile = menuNav.findItem(R.id.nav_patientProfile);
         final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.nav_showAppointment);
         final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.nav_bookedAppointment);
         final MenuItem nav_feedback = menuNav.findItem(R.id.nav_feedback);
@@ -122,6 +123,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         MenuItem nav_logIn = menuNav.findItem(R.id.nav_login);
 
         nav_profile.setVisible(false);
+        nav_patientProfile.setVisible(false);
         nav_ShowAppointment.setVisible(false);
         nav_BookedAppointment.setVisible(false);
         nav_logIn.setVisible(false);
