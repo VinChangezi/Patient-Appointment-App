@@ -25,14 +25,14 @@
                 android:id="@+id/main_toolbar"
                 layout="@layout/app_bar_layout" />
 
-            <TableLayout
+            <com.google.android.material.tabs.TabLayout
                 android:id="@+id/main_tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:tabIndicatorColor="@android:color/white"
                 app:tabIndicatorHeight="3dp">
 
-            </TableLayout>
+            </com.google.android.material.tabs.TabLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 
