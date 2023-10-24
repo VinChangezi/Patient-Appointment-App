@@ -24,6 +24,7 @@ import com.example.aman.hospitalappointy.doctor.DoctorProfileActivity;
 import com.example.aman.hospitalappointy.doctor.ShowDoctorAppointmentActivity;
 import com.example.aman.hospitalappointy.feedback.FeedbackActivity;
 import com.example.aman.hospitalappointy.auth.LoginActivity;
+import com.example.aman.hospitalappointy.patient.PatientProfileActivity;
 import com.example.aman.hospitalappointy.patient.PatientViewBookedAppointmentActivity;
 import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.utils.KeyboardUtils;
@@ -115,6 +116,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Menu menuNav = mNavigationView.getMenu();
         final MenuItem nav_profile = menuNav.findItem(R.id.nav_profile);
+        final MenuItem nav_patientProfile = menuNav.findItem(R.id.nav_patientProfile);
         final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.nav_showAppointment);
         final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.nav_bookedAppointment);
         final MenuItem nav_feedback = menuNav.findItem(R.id.nav_feedback);
@@ -122,6 +124,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         MenuItem nav_logIn = menuNav.findItem(R.id.nav_login);
 
         nav_profile.setVisible(false);
+        nav_patientProfile.setVisible(false);
         nav_ShowAppointment.setVisible(false);
         nav_BookedAppointment.setVisible(false);
         nav_logIn.setVisible(false);
@@ -151,11 +154,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Menu menuNav = mNavigationView.getMenu();
         final MenuItem nav_profile = menuNav.findItem(R.id.nav_profile);
+        final MenuItem nav_patientProfile = menuNav.findItem(R.id.nav_patientProfile);
         final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.nav_showAppointment);
         final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.nav_bookedAppointment);
         final MenuItem nav_feedback = menuNav.findItem(R.id.nav_feedback);
 
         nav_profile.setVisible(false);
+        nav_patientProfile.setVisible(false);
         nav_ShowAppointment.setVisible(false);
         nav_BookedAppointment.setVisible(false);
         nav_feedback.setVisible(false);
@@ -170,6 +175,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 if (Type.equals("Patient")) {
                     nav_BookedAppointment.setVisible(true);
+                    nav_patientProfile.setVisible(true);
                     nav_feedback.setVisible(true);
 
 
@@ -197,6 +203,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     });
                 } else if (Type.equals("Doctor") && status.equals("Approved")) {
                     nav_profile.setVisible(true);
+                    nav_patientProfile.setVisible(false);
                     nav_ShowAppointment.setVisible(true);
                     nav_feedback.setVisible(true);
                     nav_BookedAppointment.setVisible(true);
@@ -252,6 +259,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_profile:
                 launchScreen(DoctorProfileActivity.class);
+                break;
+
+            case R.id.nav_patientProfile:
+                launchScreen(PatientProfileActivity.class);
                 break;
 
             case R.id.nav_showAppointment:
