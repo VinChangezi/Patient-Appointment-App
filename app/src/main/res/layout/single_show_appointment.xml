@@ -29,7 +29,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:src="@mipmap/stethoscope" />
+                    app:srcCompat="@mipmap/stethoscope" />
 
                 <TextView
                     android:id="@+id/single_patientName"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:gravity="center"
-                    android:src="@mipmap/cancel" />
+                    app:srcCompat="@mipmap/cancel" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:src="@mipmap/schedule" />
+                    app:srcCompat="@mipmap/schedule" />
 
                 <TextView
                     android:id="@+id/single_patient_time"

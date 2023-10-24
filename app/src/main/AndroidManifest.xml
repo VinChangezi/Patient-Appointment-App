@@ -14,16 +14,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".patient.MainActivityasd"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".home.HomeActivity"
             android:screenOrientation="portrait"
@@ -45,8 +48,8 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".patient.BookAppointmentActivity"
-            android:screenOrientation="portrait"
             android:parentActivityName=".patient.PatientViewDoctorProfileActivity"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".patient.PatientViewBookedAppointmentActivity"
@@ -85,7 +88,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

@@ -1,15 +1,16 @@
 package com.example.aman.hospitalappointy.utils;
 
-import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class KeyboardUtils {
 
-    public static void hideKeyboard(Activity activity) {
+    public static void hideKeyboard(AppCompatActivity activity) {
         try {
-            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE);
             View currentFocusedView = activity.getCurrentFocus();
             if (currentFocusedView != null) {
                 inputMethodManager.hideSoftInputFromWindow(currentFocusedView.getWindowToken(), 0);

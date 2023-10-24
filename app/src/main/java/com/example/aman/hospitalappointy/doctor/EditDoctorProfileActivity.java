@@ -2,19 +2,20 @@ package com.example.aman.hospitalappointy.doctor;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aman.hospitalappointy.R;
 import com.google.firebase.auth.FirebaseAuth;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 public class EditDoctorProfileActivity extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class EditDoctorProfileActivity extends AppCompatActivity {
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.doctor_editProfile_toolbar);
-        setSupportActionBar(mToolbar);
+//        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Edit Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

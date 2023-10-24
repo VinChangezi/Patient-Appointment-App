@@ -2,13 +2,14 @@ package com.example.aman.hospitalappointy.doctor;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aman.hospitalappointy.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +46,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.doctor_profile_toolbar);
-        setSupportActionBar(mToolbar);
+//        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

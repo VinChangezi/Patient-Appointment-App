@@ -1,32 +1,32 @@
 package com.example.aman.hospitalappointy.home;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.SplashActivity;
 import com.example.aman.hospitalappointy.about.AboutActivity;
+import com.example.aman.hospitalappointy.auth.LoginActivity;
 import com.example.aman.hospitalappointy.doctor.DoctorProfileActivity;
 import com.example.aman.hospitalappointy.doctor.ShowDoctorAppointmentActivity;
 import com.example.aman.hospitalappointy.feedback.FeedbackActivity;
-import com.example.aman.hospitalappointy.auth.LoginActivity;
 import com.example.aman.hospitalappointy.patient.PatientViewBookedAppointmentActivity;
-import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.utils.KeyboardUtils;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference();
 
 
-    public static void launch(Activity context) {
+    public static void launch(SplashActivity context) {
         Intent intent = new Intent(context, HomeActivity.class);
         context.startActivity(intent);
     }
@@ -67,7 +67,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(mToolbar);
+//        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Hospital Appointy");
 
         //DrawerLayout and ToggleButton

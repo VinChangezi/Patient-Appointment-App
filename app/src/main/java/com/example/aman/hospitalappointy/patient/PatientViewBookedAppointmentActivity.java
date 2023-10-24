@@ -1,18 +1,18 @@
 package com.example.aman.hospitalappointy.patient;
 
 import android.content.DialogInterface;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aman.hospitalappointy.R;
 import com.example.aman.hospitalappointy.model.BookedAppointmentList;
@@ -77,6 +77,17 @@ public class PatientViewBookedAppointmentActivity extends AppCompatActivity {
 
                     @Override
                     protected void onBindViewHolder(@NonNull final BookedAppointmentsVH holder, final int position, @NonNull final BookedAppointmentList model) {
+                        holder.mView.findViewById(R.id.ll_qr_code).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+//                                startActivity(new Intent(PatientViewBookedAppointmentActivity.this, ScannerActivity.class));
+//                                Intent intent =  new Intent(PatientViewBookedAppointmentActivity.this, ScannerActivity.class);
+//                                on
+
+
+                            }
+                        });
 
                         holder.mView.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -113,6 +124,7 @@ public class PatientViewBookedAppointmentActivity extends AppCompatActivity {
 
                             }
                         });
+
 
                     }
                 };
