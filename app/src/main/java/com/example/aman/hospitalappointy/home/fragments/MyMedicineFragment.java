@@ -11,8 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.aman.hospitalappointy.R;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MyMedicineFragment extends Fragment {
 
@@ -37,19 +41,23 @@ public class MyMedicineFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.medicine_recyclerView);
 
+
+        // Dummy list of medicines
+        List<String> medicines = Arrays.asList("Amoxicillin", "Ibuprofen", "Paracetamol", "Aspirin", "Metformin", "Lisinopril", "Atorvastatin", "Simvastatin", "Omeprazole", "Losartan");
+
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext())); // Set the layout manager
-        MyMedicineFragment.MedicineAdapter adapter = new MyMedicineFragment.MedicineAdapter(); // Replace with your data
+        MyMedicineFragment.MedicineAdapter adapter = new MyMedicineFragment.MedicineAdapter(medicines); // Replace with your data
         recyclerView.setAdapter(adapter);
 
     }
 
     public class MedicineAdapter extends RecyclerView.Adapter<MyMedicineFragment.MedicineAdapter.ViewHolder> {
 
-//        private List<String> data;
-//
-//        public MyAdapter(List<String> data) {
-//            this.data = data;
-//        }
+        private List<String> data;
+
+        public MedicineAdapter(List<String> data) {
+            this.data = data;
+        }
 
         @NonNull
         @Override
@@ -60,8 +68,9 @@ public class MyMedicineFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull MyMedicineFragment.MedicineAdapter.ViewHolder holder, int position) {
-//            String item = data.get(position);
-//            holder.textViewName.setText(item);
+
+            String item = data.get(position);
+            holder.textViewName.setText(item);
 
             /*holder.btnDetails.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,16 +84,15 @@ public class MyMedicineFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return 7;
+            return data.size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            //            TextView textViewName;
-//            Button btnDetails;
+            TextView textViewName;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-//                btnDetails = itemView.findViewById(R.id.btn_details);
+                textViewName = itemView.findViewById(R.id.tv_medicine);
             }
         }
     }

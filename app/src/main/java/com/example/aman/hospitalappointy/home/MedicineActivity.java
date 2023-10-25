@@ -59,56 +59,9 @@ public class MedicineActivity extends AppCompatActivity {
         mTabLayout = findViewById(R.id.main_tabLayout);
         mTabLayout.setupWithViewPager(mViewPager);
 
-
-
-        /*RecyclerView recyclerView = findViewById(R.id.medicine_recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Set the layout manager
-        MedicineActivity.MedicineAdapter adapter = new MedicineActivity.MedicineAdapter(); // Replace with your data
-        recyclerView.setAdapter(adapter);*/
     }
 
     private void hideKeyboard() {
         KeyboardUtils.hideKeyboard(MedicineActivity.this);
-    }
-
-
-    public class MedicineAdapter extends RecyclerView.Adapter<MedicineActivity.MedicineAdapter.ViewHolder> {
-
-        @NonNull
-        @Override
-        public MedicineActivity.MedicineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singel_medicine_list, parent, false);
-            return new MedicineActivity.MedicineAdapter.ViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MedicineActivity.MedicineAdapter.ViewHolder holder, int position) {
-//            String item = data.get(position);
-//            holder.textViewName.setText(item);
-
-            /*holder.btnDetails.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    startActivity(new Intent(getContext(), ConsultationDetailActivity.class));
-
-                }
-            });*/
-        }
-
-        @Override
-        public int getItemCount() {
-            return 7;
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-            //            TextView textViewName;
-//            Button btnDetails;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-//                btnDetails = itemView.findViewById(R.id.btn_details);
-            }
-        }
     }
 }

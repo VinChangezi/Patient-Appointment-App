@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Patient-Appointment-App.iml" filepath="$PROJECT_DIR$/.idea/modules/Patient-Appointment-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.androidTest.iml" />

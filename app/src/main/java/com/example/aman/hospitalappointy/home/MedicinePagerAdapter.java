@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.aman.hospitalappointy.home.fragments.DoctorFragment;
 import com.example.aman.hospitalappointy.home.fragments.MyMedicineFragment;
+import com.example.aman.hospitalappointy.home.fragments.NewMedicineFragment;
 import com.example.aman.hospitalappointy.home.fragments.SpecializationFragment;
 
 public class MedicinePagerAdapter extends FragmentPagerAdapter {
@@ -24,7 +25,7 @@ public class MedicinePagerAdapter extends FragmentPagerAdapter {
                 return myMedicineFragment1;
 
             case 1:
-                MyMedicineFragment myMedicineFragment2 = new MyMedicineFragment();
+                NewMedicineFragment myMedicineFragment2 = new NewMedicineFragment();
                 return myMedicineFragment2;
 
             /*case 2:
