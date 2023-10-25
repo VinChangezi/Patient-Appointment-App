@@ -1,6 +1,7 @@
 package com.example.aman.hospitalappointy.patient;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.aman.hospitalappointy.R;
+import com.example.aman.hospitalappointy.home.FamilyDetailsActivity;
 
 import java.util.Calendar;
 
@@ -58,11 +61,12 @@ public class PatientViewDoctorProfileActivity extends AppCompatActivity {
                         String userId = getIntent().getStringExtra("UserId");
                         String date = dayOfMonth + "-" + (month + 1) + "-" + year;
 
-                        Intent intent = new Intent(PatientViewDoctorProfileActivity.this, BookAppointmentActivity.class);
+                        showPatientSelectorDialog(userId, date);
+                        /*Intent intent = new Intent(PatientViewDoctorProfileActivity.this, BookAppointmentActivity.class);
                         intent.putExtra("Date", date);
                         intent.putExtra("DoctorUserId", userId);
                         intent.putExtra("Shift", shift);
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 }, day, month, year);
                 datePickerDialog.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
@@ -71,6 +75,50 @@ public class PatientViewDoctorProfileActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+    }
+
+    private void showPatientSelectorDialog(String userId, String date) {
+        final CharSequence[] items = {"MySelf", "Add Family Person"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose an option");
+
+        final int[] selectedItem = new int[1];
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                // user checked an item
+                selectedItem[0] = item;
+            }
+        });
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // user clicked confirm
+//                Intent intent = new Intent(MainActivity.this, NewActivity.class);
+//                startActivity(intent);
+                switch (selectedItem[0]) {
+                    case 0:
+                        //if Myself selected
+                        Intent intent = new Intent(PatientViewDoctorProfileActivity.this, BookAppointmentActivity.class);
+                        intent.putExtra("Date", date);
+                        intent.putExtra("DoctorUserId", userId);
+                        intent.putExtra("Shift", shift);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        Intent intent2 = new Intent(PatientViewDoctorProfileActivity.this, FamilyDetailsActivity.class);
+                        intent2.putExtra("Date", date);
+                        intent2.putExtra("DoctorUserId", userId);
+                        intent2.putExtra("Shift", shift);
+                        startActivity(intent2);
+                        break;
+                }
+
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override

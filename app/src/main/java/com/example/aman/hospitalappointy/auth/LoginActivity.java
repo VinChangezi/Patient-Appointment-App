@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.aman.hospitalappointy.R;
+import com.example.aman.hospitalappointy.home.DashboardScreenActivity;
 import com.example.aman.hospitalappointy.home.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             mLoginProgress.dismiss();
-                            Intent main_Intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            Intent main_Intent = new Intent(LoginActivity.this, DashboardScreenActivity.class);
                             startActivity(main_Intent);
                             //Toast.makeText(LoginActivity.this,"Successfully Logged IN",Toast.LENGTH_LONG).show();
                         }

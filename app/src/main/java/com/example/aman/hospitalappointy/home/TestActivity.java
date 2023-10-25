@@ -2,8 +2,10 @@ package com.example.aman.hospitalappointy.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,63 +13,60 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aman.hospitalappointy.R;
+import com.example.aman.hospitalappointy.utils.KeyboardUtils;
+import com.google.android.material.tabs.TabLayout;
 
 public class TestActivity extends AppCompatActivity {
+
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+    private TestPagerAdapter mTestPagerAdapter;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_medicine);
 
-        RecyclerView recyclerView = findViewById(R.id.test_recyclerView);
+        //Toolbar
+        mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Hospital Appointy");
+
+        //TabLayout , SectionPagerAdapter & ViewPager
+        mViewPager = findViewById(R.id.main_ViewPager);
+        mTestPagerAdapter = new TestPagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(mTestPagerAdapter);
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+                hideKeyboard();
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+                hideKeyboard();
+            }
+        });
+
+        mTabLayout = findViewById(R.id.main_tabLayout);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+
+
+        /*RecyclerView recyclerView = findViewById(R.id.medicine_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Set the layout manager
-        MedicineAdapter adapter = new MedicineAdapter(); // Replace with your data
-        recyclerView.setAdapter(adapter);
+        MedicineActivity.MedicineAdapter adapter = new MedicineActivity.MedicineAdapter(); // Replace with your data
+        recyclerView.setAdapter(adapter);*/
     }
 
-    public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHolder> {
-
-//        private List<String> data;
-//
-//        public MyAdapter(List<String> data) {
-//            this.data = data;
-//        }
-
-        @NonNull
-        @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singel_test_list, parent, false);
-            return new ViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//            String item = data.get(position);
-//            holder.textViewName.setText(item);
-
-            /*holder.btnDetails.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    startActivity(new Intent(getContext(), ConsultationDetailActivity.class));
-
-                }
-            });*/
-        }
-
-        @Override
-        public int getItemCount() {
-            return 7;
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-            //            TextView textViewName;
-//            Button btnDetails;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-//                btnDetails = itemView.findViewById(R.id.btn_details);
-            }
-        }
+    private void hideKeyboard() {
+        KeyboardUtils.hideKeyboard(TestActivity.this);
     }
 }
