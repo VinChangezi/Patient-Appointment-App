@@ -130,13 +130,13 @@ public class PatientProfileActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        mDoctorDatabase.child("Doctor_Details").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+        mDoctorDatabase.child("Patient_Details").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-//                name = getDataSnapshot("Name", dataSnapshot);
+                name = getDataSnapshot("Name", dataSnapshot);
                 email = getDataSnapshot("Email", dataSnapshot);
-                contact = getDataSnapshot("Contact", dataSnapshot);
+                contact = getDataSnapshot("Contact_N0", dataSnapshot);
 //                education = getDataSnapshot("Education", dataSnapshot);
                 specialization = getDataSnapshot("Specialization", dataSnapshot);
                 experiance = getDataSnapshot("Experiance", dataSnapshot);
@@ -144,19 +144,19 @@ public class PatientProfileActivity extends AppCompatActivity {
                 address = getDataSnapshot("Address", dataSnapshot);
                 shift = getDataSnapshot("Shift", dataSnapshot);
 
-//                mName.setText(name);
-                mName.setText("Shamis Asghar");
+                mName.setText(name);
+//                mName.setText("Shamis Asghar");
                 mSpecialization.setText(specialization);
                 mExperiance.setText(experiance);
                 mEducation.setText(education);
-//                mEmail.setText(email);
-                mEmail.setText("hypernymbiz@gmail.com");
-//                mAge.setText(age);
-                mAge.setText("25");
-//                mContact.setText(contact);
-                mContact.setText("0123456789");
-//                mAddress.setText(address);
-                mAddress.setText("Hypernymbiz Enterprises");
+                mEmail.setText(email);
+//                mEmail.setText("hypernymbiz@gmail.com");
+                mAge.setText(age);
+//                mAge.setText("25");
+                mContact.setText(contact);
+//                mContact.setText("0123456789");
+                mAddress.setText(address);
+//                mAddress.setText("Hypernymbiz Enterprises");
 
             }
 

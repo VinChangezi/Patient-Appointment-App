@@ -246,7 +246,7 @@ public class DashboardScreenActivity extends AppCompatActivity implements Naviga
                             userName.setText(name);
                             userEmail.setText(email);
 
-                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -275,7 +275,7 @@ public class DashboardScreenActivity extends AppCompatActivity implements Naviga
                             userName.setText(name);
                             userEmail.setText(email);
 
-                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(DashboardScreenActivity.this, "Your Are Logged In", Toast.LENGTH_SHORT).show();
 
                         }
 

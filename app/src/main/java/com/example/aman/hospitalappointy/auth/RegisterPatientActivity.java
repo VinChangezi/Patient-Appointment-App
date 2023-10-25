@@ -9,13 +9,14 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.aman.hospitalappointy.R;
+import com.example.aman.hospitalappointy.home.DashboardScreenActivity;
 import com.example.aman.hospitalappointy.home.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -59,7 +60,7 @@ public class RegisterPatientActivity extends AppCompatActivity {
 
         // Toolbar
         mToolbar = (Toolbar) findViewById(R.id.register_toolbar);
-//        setSupportActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Patient Registration");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -211,7 +212,7 @@ public class RegisterPatientActivity extends AppCompatActivity {
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_Intent = new Intent(RegisterPatientActivity.this, HomeActivity.class);
+                Intent main_Intent = new Intent(RegisterPatientActivity.this, DashboardScreenActivity.class);
                 startActivity(main_Intent);
             }
         });
