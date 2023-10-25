@@ -1,6 +1,7 @@
 package com.example.aman.hospitalappointy.patient;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aman.hospitalappointy.R;
+import com.example.aman.hospitalappointy.home.DashboardScreenActivity;
+import com.example.aman.hospitalappointy.home.HomeActivity;
 import com.example.aman.hospitalappointy.model.BookedAppointmentList;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +40,12 @@ public class PatientViewBookedAppointmentActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FloatingActionButton fab;
+
+    private void launchScreen(Class<?> activity) {
+        Intent intent = new Intent(PatientViewBookedAppointmentActivity.this, activity);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,15 @@ public class PatientViewBookedAppointmentActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.show_Appointment_recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle the click.
+                launchScreen(HomeActivity.class);
+            }
+        });
 
     }
 
