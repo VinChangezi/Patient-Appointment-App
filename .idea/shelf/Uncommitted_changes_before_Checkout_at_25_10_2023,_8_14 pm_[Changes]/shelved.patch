@@ -1,0 +1,686 @@
+Index: app/src/main/java/com/example/aman/hospitalappointy/home/SectionPagerAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.aman.hospitalappointy.home;\n\nimport androidx.fragment.app.Fragment;\nimport androidx.fragment.app.FragmentManager;\nimport androidx.fragment.app.FragmentPagerAdapter;\n\nimport com.example.aman.hospitalappointy.home.fragments.DateFragment;\nimport com.example.aman.hospitalappointy.home.fragments.DoctorFragment;\nimport com.example.aman.hospitalappointy.home.fragments.SpecializationFragment;\n\n/**\n * Created by Aman on 14-Feb-18.\n */\n\npublic class SectionPagerAdapter extends FragmentPagerAdapter {\n    public SectionPagerAdapter(FragmentManager fm) {\n        super(fm);\n    }\n\n    @Override\n    public Fragment getItem(int position) {\n        switch (position){\n            case 0:\n                SpecializationFragment specializationFragment = new SpecializationFragment();\n                return specializationFragment;\n\n            case 1:\n                DoctorFragment doctorFragment = new DoctorFragment();\n                return doctorFragment;\n\n            case 2:\n                DateFragment dateFragment = new DateFragment();\n                return dateFragment;\n\n            default:\n                return null;\n\n        }\n    }\n\n    @Override\n    public int getCount() {\n        return 3;\n    }\n\n    public CharSequence getPageTitle(int position) {\n        switch (position){\n            case 0:\n                return \"SPECIALIZATION\";\n            case 1:\n                return \"DOCTOR\";\n            case 2:\n                return \"DATE\";\n\n            default:\n                return null;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/aman/hospitalappointy/home/SectionPagerAdapter.java b/app/src/main/java/com/example/aman/hospitalappointy/home/SectionPagerAdapter.java
+--- a/app/src/main/java/com/example/aman/hospitalappointy/home/SectionPagerAdapter.java	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/app/src/main/java/com/example/aman/hospitalappointy/home/SectionPagerAdapter.java	(date 1698245643757)
+@@ -4,6 +4,7 @@
+ import androidx.fragment.app.FragmentManager;
+ import androidx.fragment.app.FragmentPagerAdapter;
+ 
++import com.example.aman.hospitalappointy.home.fragments.ConsultationFragment;
+ import com.example.aman.hospitalappointy.home.fragments.DateFragment;
+ import com.example.aman.hospitalappointy.home.fragments.DoctorFragment;
+ import com.example.aman.hospitalappointy.home.fragments.SpecializationFragment;
+@@ -29,6 +30,10 @@
+                 return doctorFragment;
+ 
+             case 2:
++                ConsultationFragment consultationFragment = new ConsultationFragment();
++                return consultationFragment;
++
++            case 3:
+                 DateFragment dateFragment = new DateFragment();
+                 return dateFragment;
+ 
+@@ -50,6 +55,8 @@
+             case 1:
+                 return "DOCTOR";
+             case 2:
++                return "Consultations";
++            case 3:
+                 return "DATE";
+ 
+             default:
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\n  <component name=\"DesignSurface\">\n    <option name=\"filePathToZoomLevelMap\">\n      <map>\n        <entry key=\"app/src/main/res/layout/activity_doctor_profile.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_edit_doctor_profile.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_feedback.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_forgot_password.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_login.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_main.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_patient__book_appointment.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_patient__doctor_profile.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_patient__registration.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_patient__show_booked_appointment.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_register_patient.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_show_doctor_appointment.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/activity_splash.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/app_bar_layout.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/doctor_list_dialog.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/doctorlist_item_layout.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/fragment_date.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/fragment_doctor.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/fragment_specialization.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/roster_dialog.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/singel_specialization_list.xml\" value=\"0.5\" />\n        <entry key=\"app/src/main/res/layout/single_booked_appointment.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/single_doctor_list.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/single_show_appointment.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/udate_dialog.xml\" value=\"0.32135416666666666\" />\n        <entry key=\"app/src/main/res/layout/verify_email.xml\" value=\"0.32135416666666666\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"NullableNotNullManager\">\n    <option name=\"myDefaultNullable\" value=\"android.support.annotation.Nullable\" />\n    <option name=\"myDefaultNotNull\" value=\"android.support.annotation.NonNull\" />\n    <option name=\"myNullables\">\n      <value>\n        <list size=\"14\">\n          <item index=\"0\" class=\"java.lang.String\" itemvalue=\"org.jetbrains.annotations.Nullable\" />\n          <item index=\"1\" class=\"java.lang.String\" itemvalue=\"javax.annotation.Nullable\" />\n          <item index=\"2\" class=\"java.lang.String\" itemvalue=\"edu.umd.cs.findbugs.annotations.Nullable\" />\n          <item index=\"3\" class=\"java.lang.String\" itemvalue=\"android.support.annotation.Nullable\" />\n          <item index=\"4\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.Nullable\" />\n          <item index=\"5\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.RecentlyNullable\" />\n          <item index=\"6\" class=\"java.lang.String\" itemvalue=\"com.android.annotations.Nullable\" />\n          <item index=\"7\" class=\"java.lang.String\" itemvalue=\"javax.annotation.CheckForNull\" />\n          <item index=\"8\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.qual.Nullable\" />\n          <item index=\"9\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NullableDecl\" />\n          <item index=\"10\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NullableType\" />\n          <item index=\"11\" class=\"java.lang.String\" itemvalue=\"org.eclipse.jdt.annotation.Nullable\" />\n          <item index=\"12\" class=\"java.lang.String\" itemvalue=\"io.reactivex.annotations.Nullable\" />\n          <item index=\"13\" class=\"java.lang.String\" itemvalue=\"io.reactivex.rxjava3.annotations.Nullable\" />\n        </list>\n      </value>\n    </option>\n    <option name=\"myNotNulls\">\n      <value>\n        <list size=\"14\">\n          <item index=\"0\" class=\"java.lang.String\" itemvalue=\"org.jetbrains.annotations.NotNull\" />\n          <item index=\"1\" class=\"java.lang.String\" itemvalue=\"javax.annotation.Nonnull\" />\n          <item index=\"2\" class=\"java.lang.String\" itemvalue=\"edu.umd.cs.findbugs.annotations.NonNull\" />\n          <item index=\"3\" class=\"java.lang.String\" itemvalue=\"android.support.annotation.NonNull\" />\n          <item index=\"4\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.NonNull\" />\n          <item index=\"5\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.RecentlyNonNull\" />\n          <item index=\"6\" class=\"java.lang.String\" itemvalue=\"com.android.annotations.NonNull\" />\n          <item index=\"7\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.qual.NonNull\" />\n          <item index=\"8\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NonNullDecl\" />\n          <item index=\"9\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NonNullType\" />\n          <item index=\"10\" class=\"java.lang.String\" itemvalue=\"org.eclipse.jdt.annotation.NonNull\" />\n          <item index=\"11\" class=\"java.lang.String\" itemvalue=\"io.reactivex.annotations.NonNull\" />\n          <item index=\"12\" class=\"java.lang.String\" itemvalue=\"io.reactivex.rxjava3.annotations.NonNull\" />\n          <item index=\"13\" class=\"java.lang.String\" itemvalue=\"lombok.NonNull\" />\n        </list>\n      </value>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"corretto-1.8\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/.idea/misc.xml	(date 1698246588649)
+@@ -75,7 +75,7 @@
+       </value>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n    <string name=\"app_name\">Hospital Appointy</string>\n    <string name=\"open\">Open</string>\n    <string name=\"close\">Close</string>\n    <string name=\"copy_right\" translatable=\"false\">Copyrights © %1$d</string>\n\n</resources>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/app/src/main/res/values/strings.xml	(date 1698245648197)
+@@ -3,5 +3,7 @@
+     <string name="open">Open</string>
+     <string name="close">Close</string>
+     <string name="copy_right" translatable="false">Copyrights © %1$d</string>
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
+ 
+ </resources>
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <bytecodeTargetLevel target=\"1.8\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/.idea/compiler.xml	(date 1698246122719)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="1.8" />
++    <bytecodeTargetLevel target="11" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectModuleManager\">\n    <modules>\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml\" />\n    </modules>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/.idea/modules.xml	(date 1698246046798)
+@@ -2,11 +2,11 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Hospital-Appointy-Android.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.androidTest.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.main.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Hospital-Appointy-Android.app.unitTest.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Patient-Appointment-App.iml" filepath="$PROJECT_DIR$/.idea/modules/Patient-Appointment-App.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.androidTest.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.main.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Patient-Appointment-App.app.unitTest.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_consultation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_consultation.xml b/app/src/main/res/layout/fragment_consultation.xml
+new file mode 100644
+--- /dev/null	(date 1698245651867)
++++ b/app/src/main/res/layout/fragment_consultation.xml	(date 1698245651867)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    android:layout_margin="20dp"
++    tools:context=".home.fragments.ConsultationFragment">
++    <Button
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@color/skyBlue"
++        android:textColor="@color/white"
++        android:text="Scan Qr code"/>
++
++    <!-- TODO: Update blank fragment layout -->
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/rv_scanner"
++        android:layout_marginTop="10dp"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++    </androidx.recyclerview.widget.RecyclerView>
++
++</LinearLayout>
+Index: app/src/main/res/layout/item_consultation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_consultation.xml b/app/src/main/res/layout/item_consultation.xml
+new file mode 100644
+--- /dev/null	(date 1698245657216)
++++ b/app/src/main/res/layout/item_consultation.xml	(date 1698245657216)
+@@ -0,0 +1,138 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content">
++
++    <androidx.cardview.widget.CardView
++        android:id="@+id/single_bookedAppointment"
++        android:layout_width="match_parent"
++        android:layout_height="115dp"
++        android:layout_marginHorizontal="10dp"
++        android:layout_marginVertical="8dp"
++        app:cardCornerRadius="10dp"
++        app:cardElevation="5dp">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:orientation="horizontal">
++
++            <LinearLayout
++                android:layout_width="0dp"
++                android:layout_height="match_parent"
++                android:layout_weight="1"
++                android:orientation="vertical">
++
++                <ImageView
++                    android:layout_width="match_parent"
++                    android:layout_height="40dp"
++                    android:layout_marginTop="15dp"
++                    android:gravity="center"
++                    app:srcCompat="@mipmap/stethoscope" />
++
++                <TextView
++                    android:id="@+id/single_doctorName"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:gravity="center"
++                    android:text="Doctor Name"
++                    android:textColor="@color/colorPrimaryDark"
++                    android:textSize="15dp"
++                    android:textStyle="bold" />
++
++                <TextView
++                    android:id="@+id/single_doctorSpeciality"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:gravity="center"
++                    android:text="Doctor Speciality"
++                    android:textSize="13dp"
++                    android:textStyle="bold" />
++            </LinearLayout>
++
++            <LinearLayout
++                android:visibility="gone"
++                android:layout_width="0dp"
++                android:layout_height="match_parent"
++                android:layout_weight="0.5"
++                android:orientation="vertical">
++
++                <ImageView
++                    android:id="@+id/cancel_bookedAppointment"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="20dp"
++                    android:gravity="center"
++                    app:srcCompat="@mipmap/cancel" />
++
++                <TextView
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="10dp"
++                    android:gravity="center"
++                    android:text="Click Here to Cancel Appointment"
++                    android:textSize="11dp"
++                    android:textStyle="bold" />
++
++            </LinearLayout>
++
++            <LinearLayout
++                android:layout_width="0dp"
++                android:layout_height="match_parent"
++                android:layout_weight="1"
++                android:orientation="vertical">
++
++                <ImageView
++                    android:layout_width="match_parent"
++                    android:layout_height="40dp"
++                    android:layout_marginTop="15dp"
++                    android:gravity="center"
++                    app:srcCompat="@mipmap/schedule" />
++
++                <TextView
++                    android:id="@+id/single_date"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:gravity="center"
++                    android:text="Appointment Date"
++                    android:textColor="@color/darkGreen"
++                    android:textSize="15dp"
++                    android:textStyle="bold" />
++
++                <TextView
++                    android:id="@+id/single_time"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:gravity="center"
++                    android:text="Appointment Time"
++                    android:textSize="13dp"
++                    android:textStyle="bold" />
++
++            </LinearLayout>
++
++            <LinearLayout
++
++                android:id="@+id/ll_qr_code"
++                android:layout_width="0dp"
++                android:layout_height="match_parent"
++                android:gravity="center"
++                android:layout_weight="1"
++                android:orientation="vertical">
++
++                <Button
++                    android:id="@+id/btn_details"
++                    android:elevation="4dp"
++                    android:layout_margin="10dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:textColor="@color/white"
++                    android:background="@color/skyBlue"
++                    android:text="Details"/>
++
++            </LinearLayout>
++
++
++        </LinearLayout>
++    </androidx.cardview.widget.CardView>
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/aman/hospitalappointy/consultation/ConsultationDetailActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/aman/hospitalappointy/consultation/ConsultationDetailActivity.java b/app/src/main/java/com/example/aman/hospitalappointy/consultation/ConsultationDetailActivity.java
+new file mode 100644
+--- /dev/null	(date 1698245651875)
++++ b/app/src/main/java/com/example/aman/hospitalappointy/consultation/ConsultationDetailActivity.java	(date 1698245651875)
+@@ -0,0 +1,16 @@
++package com.example.aman.hospitalappointy.consultation;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.example.aman.hospitalappointy.R;
++
++public class ConsultationDetailActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_consultation_detail);
++    }
++}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\n\nandroid {\n    compileSdkVersion 33\n    defaultConfig {\n        applicationId \"com.example.aman.hospitalappointy\"\n        minSdkVersion 22\n        targetSdkVersion 33\n        versionCode 1\n        versionName \"1.0\"\n        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'\n    }\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'\n        }\n    }\n}\n\ndependencies {\n    implementation fileTree(include: ['*.jar'], dir: 'libs')\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\n    implementation 'androidx.appcompat:appcompat:1.6.1'\n    implementation 'com.google.android.material:material:1.0.0'\n    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'\n\n    implementation 'com.google.firebase:firebase-messaging:15.0.2'\n    implementation 'com.google.firebase:firebase-database:15.0.0'\n    implementation 'com.google.firebase:firebase-auth:15.1.0'\n    implementation 'com.google.firebase:firebase-storage:15.0.2'\n    implementation 'com.firebaseui:firebase-ui-database:3.3.1'\n\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.1'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'\n\n    implementation 'de.hdodenhof:circleimageview:2.2.0'\n    implementation 'androidx.gridlayout:gridlayout:1.0.0'\n    implementation 'androidx.cardview:cardview:1.0.0'\n    implementation 'androidx.recyclerview:recyclerview:1.0.0'\n\n    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'\n    implementation 'xyz.danoz:recyclerviewfastscroller:0.1.3'\n\n    implementation 'com.github.medyo:android-about-page:1.2.4'\n\n}\n\n\napply plugin: 'com.google.gms.google-services'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/app/build.gradle	(date 1698245654887)
+@@ -1,11 +1,11 @@
+ apply plugin: 'com.android.application'
+ 
+ android {
+-    compileSdkVersion 33
++    compileSdkVersion 34
+     defaultConfig {
+         applicationId "com.example.aman.hospitalappointy"
+-        minSdkVersion 22
+-        targetSdkVersion 33
++        minSdkVersion 21
++        targetSdkVersion 34
+         versionCode 1
+         versionName "1.0"
+         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+@@ -20,8 +20,7 @@
+ 
+ dependencies {
+     implementation fileTree(include: ['*.jar'], dir: 'libs')
+-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-    implementation 'androidx.appcompat:appcompat:1.6.1'
++    implementation 'androidx.appcompat:appcompat:1.0.0'
+     implementation 'com.google.android.material:material:1.0.0'
+     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+ 
+@@ -30,6 +29,7 @@
+     implementation 'com.google.firebase:firebase-auth:15.1.0'
+     implementation 'com.google.firebase:firebase-storage:15.0.2'
+     implementation 'com.firebaseui:firebase-ui-database:3.3.1'
++    implementation 'androidx.core:core:1.12.0'
+ 
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+@@ -44,6 +44,9 @@
+     implementation 'xyz.danoz:recyclerviewfastscroller:0.1.3'
+ 
+     implementation 'com.github.medyo:android-about-page:1.2.4'
++    implementation 'com.budiyev.android:code-scanner:2.1.0'
++
++
+ 
+ }
+ 
+Index: app/src/main/res/layout/activity_consultation_detail.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_consultation_detail.xml b/app/src/main/res/layout/activity_consultation_detail.xml
+new file mode 100644
+--- /dev/null	(date 1698245651881)
++++ b/app/src/main/res/layout/activity_consultation_detail.xml	(date 1698245651881)
+@@ -0,0 +1,135 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ScrollView android:layout_width="match_parent"
++
++    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical">
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Appointment Detail"/>
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="The initial visit to the doctor is often referred to as a medical appointment. During this appointment, the patient discusses their symptoms or concerns with the doctor, and the doctor conducts an examination and asks questions to determine the nature of the medical issue"/>
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Medical Evaluation"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text=" The doctor performs a medical evaluation or assessment to diagnose the patient's condition. This may include physical examinations, medical history review, and discussions with the patient."/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Diagnosis"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text=": After the evaluation, the doctor reaches a diagnosis. They identify the underlying medical condition or disease that is causing the patient's symptoms"/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Prescription"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="If the doctor determines that medication is necessary for treatment, they will prescribe specific medications. The doctor provides details such as the name of the medication, dosage, and instructions on how to take it."/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Medical Tests"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="In some cases, the doctor may order medical tests to gather additional information about the patient's condition. These tests could include blood tests, imaging studies (e.g., X-rays, MRIs), biopsies, or other diagnostic procedures."/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Treatment Plan:"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="The doctor outlines a treatment plan, which may include medications, lifestyle changes, therapy, surgery, or other interventions, depending on the patient's condition."/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Follow-up:"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="The patient is typically advised to follow up with the doctor after a specific period of time to assess the progress of the treatment or to discuss the results of the tests."/>
++
++        <TextView
++            android:layout_marginTop="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="bold"
++            android:gravity="center"
++            android:text="Prescription and Test Orders"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textStyle="italic"
++            android:gravity="center"
++            android:text="The doctor's orders for medications and tests are typically documented in the patient's medical record. Prescriptions can be filled at a pharmacy, and the patient may be directed to a laboratory or diagnostic facility for the tests."/>
++
++
++
++
++
++    </LinearLayout>
++
++</ScrollView>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    package=\"com.example.aman.hospitalappointy\">\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:icon=\"@mipmap/heart_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/heart_launcher\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/AppTheme\"\n        tools:ignore=\"AllowBackup\">\n        <activity\n            android:name=\".SplashActivity\"\n            android:screenOrientation=\"portrait\"\n            android:exported=\"false\"\n            tools:ignore=\"LockedOrientationActivity\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n\n        <activity\n            android:name=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".auth.LoginActivity\"\n            android:parentActivityName=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".auth.RegisterPatientActivity\"\n            android:parentActivityName=\".auth.LoginActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".patient.PatientViewDoctorProfileActivity\"\n            android:parentActivityName=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".patient.BookAppointmentActivity\"\n            android:screenOrientation=\"portrait\"\n            android:parentActivityName=\".patient.PatientViewDoctorProfileActivity\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".patient.PatientViewBookedAppointmentActivity\"\n            android:parentActivityName=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".doctor.DoctorProfileActivity\"\n            android:parentActivityName=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".doctor.EditDoctorProfileActivity\"\n            android:parentActivityName=\".doctor.DoctorProfileActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".doctor.ShowDoctorAppointmentActivity\"\n            android:parentActivityName=\".home.HomeActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".auth.ForgotPasswordActivity\"\n            android:parentActivityName=\".auth.LoginActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".feedback.FeedbackActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n        <activity\n            android:name=\".about.AboutActivity\"\n            android:screenOrientation=\"portrait\"\n            tools:ignore=\"LockedOrientationActivity\" />\n\n        <meta-data\n            android:name=\"preloaded_fonts\"\n            android:resource=\"@array/preloaded_fonts\" />\n\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision d3ba9aa799af77b01a0bb82d41f6662a8109eb1e)
++++ b/app/src/main/AndroidManifest.xml	(date 1698245652087)
+@@ -14,17 +14,19 @@
+         android:theme="@style/AppTheme"
+         tools:ignore="AllowBackup">
+         <activity
++            android:name=".patient.MainActivityasd"
++            android:exported="false" />
++        <activity
+             android:name=".SplashActivity"
+             android:screenOrientation="portrait"
+-            android:exported="false"
+-            tools:ignore="LockedOrientationActivity">
++            tools:ignore="LockedOrientationActivity"
++            android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+-
+         <activity
+             android:name=".home.HomeActivity"
+             android:screenOrientation="portrait"
+@@ -46,8 +48,8 @@
+             tools:ignore="LockedOrientationActivity" />
+         <activity
+             android:name=".patient.BookAppointmentActivity"
++            android:parentActivityName=".patient.PatientViewDoctorProfileActivity"
+             android:screenOrientation="portrait"
+-            android:parentActivityName=".patient.PatientViewDoctorProfileActivity"
+             tools:ignore="LockedOrientationActivity" />
+         <activity
+             android:name=".patient.PatientViewBookedAppointmentActivity"
+@@ -86,7 +88,6 @@
+         <meta-data
+             android:name="preloaded_fonts"
+             android:resource="@array/preloaded_fonts" />
+-
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/aman/hospitalappointy/home/fragments/ConsultationFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/aman/hospitalappointy/home/fragments/ConsultationFragment.java b/app/src/main/java/com/example/aman/hospitalappointy/home/fragments/ConsultationFragment.java
+new file mode 100644
+--- /dev/null	(date 1698245654708)
++++ b/app/src/main/java/com/example/aman/hospitalappointy/home/fragments/ConsultationFragment.java	(date 1698245654708)
+@@ -0,0 +1,92 @@
++package com.example.aman.hospitalappointy.home.fragments;
++
++import android.content.Intent;
++import android.os.Bundle;
++
++import androidx.annotation.NonNull;
++import androidx.fragment.app.Fragment;
++import androidx.recyclerview.widget.LinearLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.Button;
++
++import com.example.aman.hospitalappointy.R;
++import com.example.aman.hospitalappointy.consultation.ConsultationDetailActivity;
++
++public class ConsultationFragment extends Fragment {
++
++
++    private String mParam1;
++    private String mParam2;
++
++    public ConsultationFragment() {
++        // Required empty public constructor
++    }
++
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        final View rootView = inflater.inflate(R.layout.fragment_consultation, container, false);
++        RecyclerView recyclerView = rootView.findViewById(R.id.rv_scanner);
++        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext())); // Set the layout manager
++        MyAdapter adapter = new MyAdapter(); // Replace with your data
++        recyclerView.setAdapter(adapter);
++        return rootView;
++    }
++    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
++
++//        private List<String> data;
++//
++//        public MyAdapter(List<String> data) {
++//            this.data = data;
++//        }
++
++        @NonNull
++        @Override
++        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
++            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_consultation, parent, false);
++            return new ViewHolder(view);
++        }
++
++        @Override
++        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
++//            String item = data.get(position);
++//            holder.textViewName.setText(item);
++
++            holder.btnDetails.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++
++                    startActivity(new Intent(getContext(), ConsultationDetailActivity.class));
++
++                }
++            });
++        }
++
++        @Override
++        public int getItemCount() {
++            return 7;
++        }
++
++        public class ViewHolder extends RecyclerView.ViewHolder {
++//            TextView textViewName;
++            Button btnDetails;
++
++            public ViewHolder(View itemView) {
++                super(itemView);
++                btnDetails = itemView.findViewById(R.id.btn_details);
++            }
++        }
++    }
++}
+\ No newline at end of file

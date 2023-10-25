@@ -8,7 +8,6 @@
     android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,6 +71,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Profile"
@@ -83,9 +83,11 @@
                         app:layout_constraintTop_toBottomOf="@id/img1" />
 
                     <ImageView
+
+                        android:layout_marginTop="10dp"
                         android:id="@+id/img1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/img3"
@@ -110,6 +112,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Doctors"
@@ -121,9 +124,10 @@
                         app:layout_constraintTop_toBottomOf="@id/img2" />
 
                     <ImageView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/img2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/img4"
@@ -148,6 +152,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Appointments"
@@ -160,8 +165,9 @@
 
                     <ImageView
                         android:id="@+id/img3"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/img2"
@@ -187,6 +193,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tests"
@@ -199,6 +206,7 @@
                         />
 
                     <ImageView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/img4"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -226,6 +234,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Medicines"
@@ -238,9 +247,10 @@
                         />
 
                     <ImageView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/imgg5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/img5"
@@ -265,6 +275,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tests"
@@ -277,9 +288,10 @@
                         />
 
                     <ImageView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/img5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/img1"
@@ -304,6 +316,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="QR Codes"
@@ -316,9 +329,10 @@
                         />
 
                     <ImageView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/img6"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
                         android:paddingTop="10dp"
                         android:src="@drawable/default_qrcode"

@@ -32,7 +32,7 @@ public class MedicineActivity extends AppCompatActivity {
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Hospital Appointy");
+        getSupportActionBar().setTitle("Doctor app");
 
         //TabLayout , SectionPagerAdapter & ViewPager
         mViewPager = findViewById(R.id.main_ViewPager);

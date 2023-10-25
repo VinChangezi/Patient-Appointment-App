@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Hospital Appointy");
+        getSupportActionBar().setTitle("Doctor App");
 
         //DrawerLayout and ToggleButton
         mDrawerLayout = findViewById(R.id.main_drawerLayout);
